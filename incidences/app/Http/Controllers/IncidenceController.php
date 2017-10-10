@@ -16,8 +16,9 @@ class IncidenceController extends Controller
     {
         //CRUD -> Retrieve --> List
         //BREAD -> Browse Read Edit Add Delete
+        $incidences = Incidence::All();
+        return view('list_events',compact('incidences'));
 
-        return Incidence::all();
     }
 
     /**
@@ -47,9 +48,19 @@ class IncidenceController extends Controller
      * @param  \App\Incidence  $incidence
      * @return \Illuminate\Http\Response
      */
-    public function show(Incidence $incidence)
+    public function show(Incidence $incidence){
+
+
+        return view('show_incident',compact('incidence'));
+
+    }
+    public function show2($id)
     {
-        //
+        dump($id);
+        dump($incidence = Incidence::find($id));
+
+
+        $incidence = Incidence::findOrFail($id);
     }
 
     /**
