@@ -12,9 +12,14 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testShowAllIncidences()
     {
-        $response = $this->get('/');
+        //els testos sempre han de tenir 3 parts:
+        //1. Preparar el test
+        //2. Executar el codi que vull provar.
+        // 3. Comprovo: assert
+
+        $response = $this->get('/incidences');
 
         $response->assertStatus(200);
     }
